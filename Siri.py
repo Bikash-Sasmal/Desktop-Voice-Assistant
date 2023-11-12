@@ -12,19 +12,20 @@ from plyer import notification
 from pygame import mixer
 import speedtest
 
+# passward logic
 
-# for i in range(3):
-#     a = input("Enter Passward to open jarvis:- ")
-#     pw_file = open("password.txt","r")
-#     pw = pw_file.read()
-#     pw_file.close()
-#     if(a == pw):
-#         print("WELCOME SIR ! PLZ SPEAK [WAKE UP] TO LOAD UP")
-#         break
-#     elif(i == 2 and a != pw):
-#         exit()
-#     elif(a != pw):
-#         print("Try Agian")
+for i in range(3):
+    a = input("Enter Passward to open jarvis:- ")
+    pw_file = open("password.txt","r")
+    pw = pw_file.read()
+    pw_file.close()
+    if(a == pw):
+        print("WELCOME SIR ! PLZ SPEAK [WAKE UP] TO LOAD UP")
+        break
+    elif(i == 2 and a != pw):
+        exit()
+    elif(a != pw):
+        print("Try Agian")
 
 
 
@@ -34,10 +35,12 @@ engine.setProperty('voice',voices[1].id)
 # print(voices)
 engine.setProperty('rate',170)
 
+# speak fnction
 def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
+# this function listen and after that recognize what you said 
 def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -60,6 +63,8 @@ if __name__ == "__main__":
     while True:
         query = takeCommand().lower()
         if "wake up" in query:
+
+            # Fetch greetme function from GreetMe file
             from GreetMe import greetMe
             greetMe()
 
@@ -80,6 +85,9 @@ if __name__ == "__main__":
                     speak(f"Your new password is {new_pw}")
 
                 ####################################################
+                
+                # You scheduled your tasks
+            
                 elif "schedule my day" in query:
                     tasks = [] # empty list
                     speak("Do you want to clear old tasks (plz type Yes or No)")
@@ -104,6 +112,8 @@ if __name__ == "__main__":
                             file.write(f"{i}. {tasks[i]}\n")
                             file.close()
 
+                # You can show you schedule also
+
                 elif "show my schedule" in query:
                     file = open("tasks.txt","r")
                     content = file.read()
@@ -117,6 +127,8 @@ if __name__ == "__main__":
                         timeout = 15
                     )
 
+                # it will open your desktop search bar, type and open the application
+
                 elif "open" in query:
                     query = query.replace("open","")
                     query = query.replace("siri","")
@@ -124,12 +136,14 @@ if __name__ == "__main__":
                     pyautogui.typewrite(query)
                     pyautogui.sleep(2)
                     pyautogui.press("enter")
-
+                 
+                # You can take a screenshot 
                 elif "screenshot" in query:
                     import pyautogui 
                     im = pyautogui.screenshot()
                     im.save("ss.jpg")
 
+                # You can click a photo 
                 elif "click a photo" in query:
                     pyautogui.press("super")
                     pyautogui.typewrite("camera")
@@ -138,7 +152,7 @@ if __name__ == "__main__":
                     speak("smile")
                     pyautogui.press("enter")
 
-
+                # You can check your wifi internet speed
                 elif "internet speed" in query:
                     wifi = speedtest.Speedtest()
                     upload_net = wifi.upload()/1048576
@@ -174,11 +188,15 @@ if __name__ == "__main__":
 
                 elif "thank you" in query:
                     speak("you are welcome, sir")
-
+                
+                # Listen latest news also "business", "health", "entertainment", "technology"
                 elif "news" in query:
+
+                    # fetch latestNews function from newsRead file
                     from newsRead import latestNews
                     latestNews()
                 
+                # If you give command then it will sing your favorite song  (i gave only 4)
                 elif "sing a song" in query:
                     speak("Playing your favorite songs, sir")
                     a = (1,2,3,4)
@@ -192,48 +210,61 @@ if __name__ == "__main__":
                     elif b == 4:
                         webbrowser.open("https://youtu.be/VuG7ge_8I2Y?si=ITJBdopyn3dDwX92")
 
+                # Pause video which is running on your youtube
                 elif "pause" in query:
                     pyautogui.press("k")
                     speak("video paused")
 
+                # If pause then Play video which is running on your youtube
                 elif "play" in query:
                     pyautogui.press("k")
                     speak("video played")
-
+                
+                # you can Mute
                 elif "mute" in query:
                     pyautogui.press("m")
                     speak("video muted")
 
+                # You will also do volume up
                 elif "volume up" in query:
+
+                    # fetch the volumeup function from keyboard file
                     from keyboard import volumeup
                     speak("Turning volume up, sir")
                     volumeup()
-
+                
+                # You will also do volume down
                 elif "volume down" in query:
                     from keyboard import volumedown
                     speak("Turning volume down, sir")
                     volumedown()
-
+                
+                # It can open your online webapp or your system app also
                 elif "open" in query:
                     from dictapp import openappweb
                     openappweb(query)
 
+                # It can close your online webapp or your system app also
                 elif "close" in query:
                     from dictapp import closeappweb
                     closeappweb(query)
-
+                
+                # You can search something on google
                 elif "google" in query:
                     from searchNow import searchGoogle
                     searchGoogle(query)
 
+                # You can search something on Youtube
                 elif "youtube" in query:
                     from searchNow import searchYoutube
                     searchYoutube(query)
-
+                
+                # You can search something on wikipedia and it will tell you 2 lines 
                 elif "wikipedia" in query:
                     from searchNow import searchWikipedia
                     searchWikipedia(query,num_sentences=2)
 
+                # Show the current temperature
                 elif "temperature" in query:
                     speak("Which place's temperature would you like to know?")
                     search = takeCommand().lower()
@@ -243,7 +274,8 @@ if __name__ == "__main__":
                     temp = data .find("div", class_ = "BNeawe").text
                     print(f"sir, current {search} is {temp}")
                     speak(f"sir, current {search} is {temp}")
-
+                
+                # Show the current weather
                 elif "weather" in query:
                     speak("Which place's weather would you like to know?")
                     search = takeCommand().lower()
@@ -253,16 +285,19 @@ if __name__ == "__main__":
                     weather = data .find("div", class_ = "BNeawe").text
                     print(f"sir, current{search} is {weather}")
                     speak(f"sir, current{search} is {weather}")
-
+                
+                # Show the current time
                 elif "the time" in query:
                     strTime = datetime.datetime.now().strftime("%H:%M")
                     print(f"Sir, the time is {strTime}")
                     speak(f"Sir, the time is {strTime}")
-
+                
+                # if you say finally sleep then it will exit in this program
                 elif "finally sleep" in query:
                     speak("Going to sleep, sir")
                     exit()
 
+                # It remember what you have already said
                 elif "remember that" in query:
                     rememberMessage = query.replace("remember that","")
                     rememberMessage = query.replace("siri","")
@@ -271,10 +306,12 @@ if __name__ == "__main__":
                     remember.write(rememberMessage)
                     remember.close()
 
+                # if you give this command then it will tell you what you told
                 elif "do you remember" in query:
                     remember = open("remember.txt","r")
                     speak("you told me" + remember.read())
 
+                # shutdown your system 
                 elif "shutdown the system" in query:
                     speak("Are you sure sir you want to shutdown your system.(please speak yes or no)")
                     shutdown = takeCommand().lower()
@@ -283,6 +320,8 @@ if __name__ == "__main__":
                         os.system("shutdown /s /t 1")
                     elif shutdown == "no":
                         break
+
+                # i add one of the poplar game is rock paper scissor you can enjoy
                 elif "rock paper scissor game" in query or "rock paper scisor game" in query:
                     from gameRockPaperScissors import gameplay
                     gameplay()
