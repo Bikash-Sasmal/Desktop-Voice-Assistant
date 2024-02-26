@@ -34,7 +34,6 @@
     <li><strong>Shutdown the system:</strong> <p>Initiate system shutdown.</p></li>
     <li><strong>Finally sleep:</strong> <p>Exit the voice assistant program.</p></li>
 </ul>
-
     <p>Additionally, the voice assistant can respond to general inquiries such as:</p>
     <ul>
         <li>Hello</li>
