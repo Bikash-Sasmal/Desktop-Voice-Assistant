@@ -8,32 +8,33 @@
  <li><b>Change password , dynamic scheduling, news reader,</b> and <b>system shutdown.</b><br></li>
 </ul>
     <p>This is a Python-based desktop voice assistant capable of performing various tasks through voice commands. Below is a list of commands along with their functionalities:</p
-    <ul>
-        <li><strong>Wake up:</strong> Activate the voice assistant.</li>
-        <li><strong>Change password:</strong> Change the password for accessing the assistant.</li>
-        <li><strong>Click a photo:</strong> Capture a photo using the device's camera.</li>
-        <li><strong>Sing a song:</strong> Play a song.</li>
-        <li><strong>Play:</strong> Start playing media.</li>
-        <li><strong>Pause:</strong> Pause the currently playing media.</li>
-        <li><strong>Mute:</strong> Mute the audio.</li>
-        <li><strong>Volume up:</strong> Increase the volume.</li>
-        <li><strong>Volume down:</strong> Decrease the volume.</li>
-        <li><strong>Google:</strong> Perform a Google search based on a query.</li>
-        <li><strong>YouTube:</strong> Search on YouTube based on a query.</li>
-        <li><strong>Temperature:</strong> Check the temperature.</li>
-        <li><strong>Weather:</strong> Check the weather conditions.</li>
-        <li><strong>Screenshot:</strong> Take a screenshot of the current screen.</li>
-        <li><strong>Remember that:</strong> Store a piece of information for later retrieval.</li>
-        <li><strong>Do you remember:</strong> Retrieve previously stored information.</li>
-        <li><strong>The time:</strong> Display the current time.</li>
-        <li><strong>News:</strong> Fetch and present current news updates.</li>
-        <li><strong>Internet speed:</strong> Measure and display internet speed.</li>
-        <li><strong>Open:</strong> Open applications based on the command.</li>
-        <li><strong>Schedule my day:</strong> Input tasks to create a daily schedule.</li>
-        <li><strong>Show my schedule:</strong> Display the scheduled tasks.</li>
-        <li><strong>Shutdown the system:</strong> Initiate system shutdown.</li>
-        <li><strong>Finally sleep:</strong> Exit the voice assistant program.</li>
-    </ul>
+ <ul>
+    <li><strong>Wake up:</strong> <p>Activate the voice assistant.</p></li>
+    <li><strong>Change password:</strong> <p>Change the password for accessing the assistant.</p></li>
+    <li><strong>Click a photo:</strong> <p>Capture a photo using the device's camera.</p></li>
+    <li><strong>Sing a song:</strong> <p>Play a song.</p></li>
+    <li><strong>Play:</strong> <p>Start playing media.</p></li>
+    <li><strong>Pause:</strong> <p>Pause the currently playing media.</p></li>
+    <li><strong>Mute:</strong> <p>Mute the audio.</p></li>
+    <li><strong>Volume up:</strong> <p>Increase the volume.</p></li>
+    <li><strong>Volume down:</strong> <p>Decrease the volume.</p></li>
+    <li><strong>Google:</strong> <p>Perform a Google search based on a query.</p></li>
+    <li><strong>YouTube:</strong> <p>Search on YouTube based on a query.</p></li>
+    <li><strong>Temperature:</strong> <p>Check the temperature.</p></li>
+    <li><strong>Weather:</strong> <p>Check the weather conditions.</p></li>
+    <li><strong>Screenshot:</strong> <p>Take a screenshot of the current screen.</p></li>
+    <li><strong>Remember that:</strong> <p>Store a piece of information for later retrieval.</p></li>
+    <li><strong>Do you remember:</strong> <p>Retrieve previously stored information.</p></li>
+    <li><strong>The time:</strong> <p>Display the current time.</p></li>
+    <li><strong>News:</strong> <p>Fetch and present current news updates.</p></li>
+    <li><strong>Internet speed:</strong> <p>Measure and display internet speed.</p></li>
+    <li><strong>Open:</strong> <p>Open applications based on the command.</p></li>
+    <li><strong>Schedule my day:</strong> <p>Input tasks to create a daily schedule.</p></li>
+    <li><strong>Show my schedule:</strong> <p>Display the scheduled tasks.</p></li>
+    <li><strong>Shutdown the system:</strong> <p>Initiate system shutdown.</p></li>
+    <li><strong>Finally sleep:</strong> <p>Exit the voice assistant program.</p></li>
+</ul>
+
     <p>Additionally, the voice assistant can respond to general inquiries such as:</p>
     <ul>
         <li>Hello</li>
